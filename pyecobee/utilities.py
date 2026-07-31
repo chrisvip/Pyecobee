@@ -115,6 +115,8 @@ class Utilities(object):
                                 )
                             )
                         except AttributeError:
+                            if key not in cls._class_name_map:
+                                continue
                             parent_classes.append(
                                 getattr(
                                     sys.modules[__name__],
